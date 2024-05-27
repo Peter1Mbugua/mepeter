@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>PETER'S CALCULATOR</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="calculator">
+  <input type="text" id="input">
+  <div class="button">
+    <button type="text">9</button>
+    <button type="text">8</button>
+    <button type="text">7</button>
+    <button type="text" class="signs">CLR</button>
+    <br>
+    <button type="text">6</button>
+    <button type="text">5</button>
+    <button type="text">4</button>
+    <button type="text" class="signs">+</button>
+    <br>
+    <button type="text">3</button>
+    <button type="text">2</button>
+    <button type="text">1</button>
+    <button type="text" class="signs">-</button>
+    <br>
+    <button type="text">0</button>
+    <button type="text">.</button>
+    <button type="text" class="signs">*</button>
+    <button type="text" class="signs">/</button>
+    <br>
+    <button type="text" class="main signs">=</button>
+    
+  </div>
+  </div>
+  
+  <script defer>
+  const input = document.getElementById("input")
+var currentEquation = ""
+
+function clearInput() {
+input.value = "0"
+currentEquation = ""
+}
+
+function append(text) {
+currentEquation += text
+input.value = currentEquation
+}
+
+function calc(){
+try {
+var res = eval(currentEquation)
+input.value = res
+currentEquation = res
+} catch (error) {
+console.error(error)
+input.value = "Syntax Error!!"
+}
+}
+</script>
+  
+  
+  
+  
+  
+  
+</body>
+</html>
